@@ -2,8 +2,9 @@ import AdminContext from "./AdminContext";
 import { useState } from "react";
 
 const AdminState = (props) => {
-  const [users, setUsers] = useState([]);
-  const [notes, setNotes] = useState([]);
+  const initial=[]
+  const [users, setUsers] = useState(initial);
+  const [notes, setNotes] = useState(initial);
   const URL="https://icloudnotebook.herokuapp.com"
 
   async function fetchAllUser() {
