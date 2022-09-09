@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, {useContext, useEffect } from "react";
 import "../Stylesheet/Admin.css";
 import AdminData from "./AdminData";
 import AdminContext from "../context/AdminContext";
