@@ -10,6 +10,7 @@ export default function Panel(props) {
   useEffect(() => {
     fetchAllUser();
     fetchAllNotes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -31,13 +32,24 @@ export default function Panel(props) {
       </div>
       <div><h2 className="text-center userDataTxt">User Data</h2></div>
       {
-        users.map((user) => {
-          return notes.map((note) => {
+        // users.map((user) =>
+        //  {
+        //    notes.map((note) => { //map will return array
+        //     if (user._id === note.user) {
+        //        <AdminData user={user} note={note} key={note._id} />;
+        //        // eslint-disable-next-line
+        //     }
+        //   })
+        // })
+
+        users.forEach((user)=>{
+          notes.forEach((note)=>{
             if (user._id === note.user) {
-              return <AdminData user={user} note={note} key={note._id} />;
+              <AdminData user={user} note={note} key={note._id} />;
             }
-          });
+          })
         })
+
       }
     </div>
   );

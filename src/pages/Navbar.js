@@ -11,9 +11,9 @@ export default function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg d-flex">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <a className="navbar-brand" href="https://manishkulal.netlify.app/">
             Manish
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
