@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React from 'react'
 import "../Stylesheet/Admin.css";
 
 export default function AdminData(props) {
