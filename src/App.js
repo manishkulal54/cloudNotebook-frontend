@@ -17,7 +17,7 @@ export default function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Signup />} />
           <Route exact path="/admin" element={<AdminLog username={"M@nish"} password={"M@ni$4"}/>} />
           <Route exact path="*" element={<Offline/>} />
         </Routes>
