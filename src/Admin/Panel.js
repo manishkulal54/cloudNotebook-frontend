@@ -13,6 +13,9 @@ export default function Panel(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // let user={}
+  // let note={}
+
   return (
     <div className={`${!props.lock ? "d-block" : "d-none"}`}>
       <div className="Pcontainer">
@@ -32,23 +35,28 @@ export default function Panel(props) {
       </div>
       <div><h2 className="text-center userDataTxt">User Data</h2></div>
       {
-        // users.map((user) =>
-        //  {
-        //    notes.map((note) => { //map will return array
+        users.map((user) =>
+         {
+         return  notes.map((note) => { //map will return array
+            // if (user._id === note.user) {
+            return user._id === note.user? (<AdminData user={user} note={note} key={note._id} />):null
+               // eslint-disable-next-line
+            // }
+          })
+        })
+
+        
+
+        // users.forEach((user)=>{
+        //   notes.forEach((note)=>{
         //     if (user._id === note.user) {
-        //        <AdminData user={user} note={note} key={note._id} />;
-        //        // eslint-disable-next-line
+        //       console.log(user,note);
+        //       return(
+        //          <AdminData user={user} note={note} key={note._id} />
+        //       )
         //     }
         //   })
         // })
-
-        users.forEach((user)=>{
-          notes.forEach((note)=>{
-            if (user._id === note.user) {
-              <AdminData user={user} note={note} key={note._id} />;
-            }
-          })
-        })
 
       }
     </div>

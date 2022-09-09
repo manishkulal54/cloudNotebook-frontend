@@ -1,11 +1,10 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import "../Stylesheet/Admin.css";
 
 export default function AdminData(props) {
   const {user,note}=props
-  return (
-    <div key={note._id}>
-    <div className='Dcontainer'>
+  return (    
+    <div className='Dcontainer' key={note._id}>
         <div className='data'>
             <div className='userInfo'>
                 <div className='usName'>{user.name}</div>
@@ -18,7 +17,6 @@ export default function AdminData(props) {
                 <p className='description'>{note.description}</p>
             </div>
         </div>
-    </div>
     </div>
   )
 }
