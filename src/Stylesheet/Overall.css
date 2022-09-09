@@ -1,0 +1,25 @@
+.createCont{
+    color: #ddcdcd;
+}
+.createCont .createInput{
+    background-color: #c3b2b2a1;
+}
+.createCont .createBtn{
+    background-color:#590dfd38;
+    border-radius: 20px;
+    width: 20vw;
+    height: 7vh;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.createCont .createBtn:hover{
+    background-color: #590dfd;
+}
+.HomeNoteTxt{
+    text-decoration: underline;
+    letter-spacing: 2px;
+    font-size: 1.9rem;
+    font-weight: bold;
+    margin: 50px;
+}
