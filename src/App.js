@@ -19,7 +19,7 @@ export default function App() {
           <Route exact path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route exact path="/admin" element={<AdminLog username={"M@nish"} password={"M@ni$4"}/>} />
-          <Route exact path="*" element={<Offline/>} />
+          <Route  path="*" element={<Offline/>} />
         </Routes>
       </BrowserRouter>
       </NoteState>
