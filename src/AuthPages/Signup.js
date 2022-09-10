@@ -102,6 +102,7 @@ export default function Signup() {
         }),
       });
       const data = await response.json();
+      setSignupText("Signup")
       if (data.message === "error") {
         setMessageFn(data.error);
       } else {
@@ -116,7 +117,6 @@ export default function Signup() {
         });
         sessionStorage.removeItem("authToken");
         sessionStorage.setItem("authToken", data.token);
-        setSignupText("Signup")
         window.location.href = "/";
       }
     } catch (e) {

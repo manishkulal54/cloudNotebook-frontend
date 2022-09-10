@@ -58,6 +58,7 @@ export default function Login() {
         }),
       });
       const data = await response.json();
+      setLoginText('Login')
       if (data.message === "error") {
         toast.error("invalid credential", {
           position: "top-right",
@@ -80,7 +81,6 @@ export default function Login() {
           draggable: true,
           progress: undefined,
         });
-        setLoginText('Login')
         window.location.href = "/";
       }
     } catch (e) {}
