@@ -51,6 +51,15 @@ export default function Home() {
 
   function handleEdit(){
     updateNote(eNote.eId,eNote.eTitle,eNote.eDescription,eNote.eTag,authToken)
+    toast.success('Note edited', {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
     closeBtn.current.click()
   }
 

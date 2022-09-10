@@ -20,15 +20,6 @@ export default function Note(props) {
             className="fa-solid fa-pen-to-square btn border-0"
             onClick={
               ()=>{
-                toast.success('Note edited', {
-                  position: "bottom-right",
-                  autoClose: 5000,
-                  hideProgressBar: false,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  progress: undefined,
-                  });
                 editNote(note)
               }
             }
@@ -36,6 +27,7 @@ export default function Note(props) {
           <i
             className="fa-solid fa-trash-can btn border-0"
             onClick={() => {
+              deleteNote(note._id, authToken);
                toast.success('Note deleted', {
               position: "bottom-right",
               autoClose: 5000,
@@ -45,7 +37,6 @@ export default function Note(props) {
               draggable: true,
               progress: undefined,
               });
-              deleteNote(note._id, authToken);
             }}
           ></i>
         </div>
