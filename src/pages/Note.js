@@ -43,17 +43,6 @@ export default function Note(props) {
         <h5 className="title text-center" style={{textDecoration:'underline'}}>{note.title}</h5>
         <p className="description text-center">{note.description}</p>
       </div>
-      <ToastContainer
-position="bottom-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-/>
     </>
   );
 }
