@@ -10,6 +10,7 @@ export default function Login() {
     email: "",
     password: "",
   });
+  const [loginText,setLoginText] = useState("Login");
 
   const handleChange = (e) => {
     setDetails({ ...details, [e.target.name]: e.target.value });
@@ -41,13 +42,13 @@ export default function Login() {
     if (!validator) {
       return;
     }
+    setLoginText("loging in...")
 
     const URL = "https://icloudnotebook.herokuapp.com";
 
     try {
       const response = await fetch(URL + "/api/auth/login", {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
@@ -79,6 +80,7 @@ export default function Login() {
           draggable: true,
           progress: undefined,
         });
+        setLoginText('Login')
         window.location.href = "/";
       }
     } catch (e) {}
@@ -134,7 +136,7 @@ export default function Login() {
                 value={details.password}
               />
               <i
-                className={`me-3 ${
+                className={`me-3  btn border-0 eyeBtnMobileLog ${
                   eyeBtn === false
                     ? "fa-regular fa-eye"
                     : "fa-sharp fa-solid fa-eye-slash"
@@ -144,7 +146,7 @@ export default function Login() {
               ></i>
               </div>
             <button onClick={handleSubmit} ref={clickRef}>
-              Login
+              {loginText}
             </button>
             <p className="reg-text">
               Create account <Link to="/signup">Signup</Link>

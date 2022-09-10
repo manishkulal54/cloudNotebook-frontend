@@ -25,6 +25,7 @@
     height: 6vh;
     background-color: none;
     border: 1px solid;
+    border-radius:20px;
 }
 
 
@@ -33,7 +34,8 @@
 
 .Pcontainer{
     width: 100vw;
-    height: 100vh;
+    height: 100vh;    
+    color: #8a9ba5f0
 }
 .Pcontainer .PHead{
     width: 100%;
@@ -92,9 +94,12 @@
 }
 .Dcontainer .userInfo{
     width: 100%;
-    height: 10vh;
+    height: max-content;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    border: 2px solid;
+    justify-content: flex-star
 }
 .Dcontainer .userInfo div{
     margin-left:10vw;
@@ -102,7 +107,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
 }
 .Dcontainer .DNotes{
@@ -116,4 +121,32 @@
     font-size: 1.1rem;
     font-weight: 500;
     text-decoration: underline;
+}
+
+
+@media screen and (max-width:500px) {
+    .Acontainer .box{
+        border: 2px solid;
+        width: 70%;
+        height: 60%;
+    }
+    .Acontainer .box div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .Acontainer .box div input{
+        width: 80%;
+        margin-top: 5px;
+    }
+    .Acontainer .box button{
+        width: 50%;
+    }
+    .Pcontainer .Pcircles{
+        flex-direction: column;
+    }
+
+    
 }

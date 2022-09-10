@@ -14,7 +14,7 @@ export default function Note(props) {
 
   return (
     <>
-      <div className="mt-3 me-5 p-3 noteBox">
+      <div className="mt-3 p-3 noteBox">
         <div className="icons">
           <i
             className="fa-solid fa-pen-to-square btn border-0"

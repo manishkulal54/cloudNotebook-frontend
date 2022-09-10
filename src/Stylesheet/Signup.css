@@ -119,10 +119,24 @@
         flex-direction: column;
     }
     .sign-form div input{
+        width: 90%;
         margin: 10px 0;
     }
     .sign-form button{
         height: 50px;
         margin-bottom: 10px;
+    }
+    .log-text{
+        margin: 20px 0
+    }
+    .log-text a{
+        margin: 8px 0 0 0;
+    }
+    .eyeBtnMobile{
+        position: relative;
+        top: -6vh;
+        left: 28vw;
+
+
     }
 }

@@ -13,6 +13,7 @@ export default function Signup() {
     password: "",
     cPassword: "",
   });
+  const [signupText,setSignupText]=useState("Signup")
 
   // img parallax code
   function signupParallax(e) {
@@ -85,6 +86,7 @@ export default function Signup() {
     if (!validator) {
       return;
     }
+    setSignupText('Registering....')
     const URL = "https://icloudnotebook.herokuapp.com";
     try {
       const response = await fetch(URL + "/api/auth/signup", {
@@ -114,9 +116,20 @@ export default function Signup() {
         });
         sessionStorage.removeItem("authToken");
         sessionStorage.setItem("authToken", data.token);
+        setSignupText("Signup")
         window.location.href = "/";
       }
-    } catch (e) {}
+    } catch (e) {
+      toast.error("Some error occured While registering", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: 0,
+      });
+    }
   };
 
   // eyeBtn control
@@ -177,7 +190,7 @@ export default function Signup() {
               value={details.email}
             />
           </div>
-          <div>
+          <div className="test" >
             <label htmlFor="regPass">Password</label>
             <input
               type={`${eyeBtn1 === true ? "password" : "text"}`}
@@ -188,7 +201,7 @@ export default function Signup() {
               value={details.password}
             />
             <i
-              className={`me-3 ${
+              className={`me-3  btn border-0 eyeBtnMobile ${
                 eyeBtn1 === false
                   ? "fa-regular fa-eye"
                   : "fa-sharp fa-solid fa-eye-slash"
@@ -210,7 +223,7 @@ export default function Signup() {
               value={details.cPassword}
             />
             <i
-              className={`me-3 ${
+              className={`me-3  btn border-0 eyeBtnMobile ${
                 eyeBtn2 === false
                   ? "fa-regular fa-eye"
                   : "fa-sharp fa-solid fa-eye-slash"
@@ -221,7 +234,7 @@ export default function Signup() {
               }}
             ></i>
           </div>
-          <button onClick={handleSubmit}>Signup</button>
+          <button onClick={handleSubmit}>{signupText}</button>
           <div className="log-text">
             I'am already a User ,<Link to="/login">Login</Link>
           </div>

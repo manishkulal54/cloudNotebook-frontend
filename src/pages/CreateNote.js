@@ -84,7 +84,7 @@ export default function CreateNote(props) {
           value={notes.tag}
         />
       </div>
-      <div className="container text-center">
+      <div className="createBtnCont">
         <button
           type="button"
           className="createBtn"
