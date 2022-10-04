@@ -1,6 +1,5 @@
 import React, { useContext} from "react";
-import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
+import {toast } from "react-toastify";
 
 
 import noteContext from "../context/NoteContext";
@@ -8,8 +7,8 @@ import "../Stylesheet/Note.css";
 
 export default function Note(props) {
   const noteState = useContext(noteContext);
-
   const { deleteNote } = noteState;
+
   const {authToken,note,editNote}=props
 
   return (
